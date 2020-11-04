@@ -10,11 +10,6 @@
   </head>
 
   <body>
-    <body>
-      <%= content_tag :main, class: controller.controller_name do %>
-      <%= yield %>
-      <% end %>
-    </body>
     <header class="main">
       <%= image_tag 'logo.png', alt: 'The Pragmatic Bookshelf' %>
       <h1><%= @page_title %></h1>
@@ -26,8 +21,14 @@
           <li><a href="/questions">Questions</a></li>
           <li><a href="/news">News</a></li>
           <li><a href="/contact">Contact</a></li>
+          <li><div class="time-container">
+           <%= render partial: "date" %>
+        </div></li>
         </ul>
       </nav>
     </section>
+      <%= content_tag :main, class: controller.controller_name do %>
+      <%= yield %>
+      <% end %>
   </body>
 </html>
