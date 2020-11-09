@@ -4,9 +4,11 @@ class StoreController < ApplicationController
   end
   def index_time
     @time = Time.now.strftime("%H:%M:%S ")
+    logger.debug "!!!!!!!!!!!"
+    logger.debug @time
   end
   def get_time
     @time = Time.now.strftime("%H:%M:%S ")
-    render partial: "date"
+    render "store/date"
   end
 end

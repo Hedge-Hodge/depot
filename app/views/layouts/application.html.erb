@@ -21,14 +21,15 @@
           <li><a href="/questions">Questions</a></li>
           <li><a href="/news">News</a></li>
           <li><a href="/contact">Contact</a></li>
+          <li><%=Time.now.strftime("%H:%M:%S ")%></li>
           <li><div class="time-container">
-           <%= render partial: "date" %>
-        </div></li>
+           <%= render "store/date" %>
+          </div></li>
         </ul>
       </nav>
-    </section>
-      <%= content_tag :main, class: controller.controller_name do %>
+    <%= content_tag :main, class: controller.controller_name do %>
       <%= yield %>
-      <% end %>
+    <% end %>
+    </section>
   </body>
 </html>
