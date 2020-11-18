@@ -24,7 +24,7 @@
           <li><%=Time.now.strftime("%H:%M:%S ")%></li>
           <% if @cart %>
             <div id="cart" class="carts">
-              <%= render @cart %>
+              <%= render_if @cart && @cart.line_items.any?, @cart %>
             </div>
           <% end %>
         </ul>
