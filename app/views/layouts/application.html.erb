@@ -22,9 +22,11 @@
           <li><a href="/news">News</a></li>
           <li><a href="/contact">Contact</a></li>
           <li><%=Time.now.strftime("%H:%M:%S ")%></li>
-          <li><div class="time-container">
-           <%= render "store/date" %>
-          </div></li>
+          <% if @cart %>
+            <div id="cart" class="carts">
+              <%= render @cart %>
+            </div>
+          <% end %>
         </ul>
       </nav>
     <%= content_tag :main, class: controller.controller_name do %>
